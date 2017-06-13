@@ -52,7 +52,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="persistenceXmlLocation" value="classpath:/META-INF/persistence.xml" />
+		<property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
 		<property name="packagesToScan" value="com.faceye.component.*.entity" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
@@ -60,9 +60,9 @@
 				<property name="database" value="MYSQL" />
 			</bean>
 		</property>
-		<!-- 
+<!-- 		
 		<property name="persistenceUnitName" value="feature"></property>
-		-->
+		 -->
 	</bean>
 
 
@@ -81,7 +81,7 @@
 		repository-impl-postfix="Impl">
 	</jpa:repositories>
 -->
-    <jpa:repositories base-package="com.faceye"
+    <jpa:repositories base-package="com.faceye.component.*.repository.jpa"
 		transaction-manager-ref="transactionManager"
 		entity-manager-factory-ref="entityManagerFactory"
 		factory-class="com.faceye.feature.repository.jpa.impl.BaseRepositoryFactoryBean"

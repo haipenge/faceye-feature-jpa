@@ -1,19 +1,56 @@
 package com.faceye.test.feature.repository;
 
-import javax.persistence.EntityManagerFactory;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.util.Assert;
 
-
 public class EntityManagerFactoryTestCase extends BaseRepositoryTestCase {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory = null;
+	@Autowired
+	private DataSource dataSource = null;
 
 	@Test
 	public void entityManagerFactory() throws DataAccessException {
 		Assert.isTrue(entityManagerFactory != null);
+	}
+
+	@Test
+	public void dataSource() throws Exception {
+		Assert.isTrue(dataSource != null);
+	}
+
+	@Test
+	public void showDatabases() throws Exception {
+		String sql = "show databases;";
+		if (dataSource != null) {
+			Connection conn = this.dataSource.getConnection();
+			Statement stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+			ResultSet rs = stmt.getResultSet();
+			if (rs.next()) {
+				String db = rs.getString(1);
+				logger.debug(">>FaceYe db is:" + db);
+				Assert.isTrue(StringUtils.isNotEmpty(db));
+
+			} else {
+				Assert.isTrue(1 > 2);
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
+		} else {
+			Assert.isTrue(1 > 2);
+		}
+
 	}
 }
