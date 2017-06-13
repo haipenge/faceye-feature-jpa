@@ -35,3 +35,4 @@
 /*.tar.gz
 /db
 /build*.xml
+*.log

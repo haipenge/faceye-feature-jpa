@@ -73,12 +73,14 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>${spring.data.jpa.version}</version>
+			<!-- 
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
 					<artifactId>junit-dep</artifactId>
 				</exclusion>
 			</exclusions>
+			 -->
 		</dependency>
 
 
@@ -150,6 +152,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<!-- spring test -->
 		<dependency>
 			<groupId>org.springframework</groupId>

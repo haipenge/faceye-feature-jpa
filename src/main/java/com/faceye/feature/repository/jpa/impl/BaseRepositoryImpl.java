@@ -186,8 +186,7 @@ public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRep
 	 * @param sql
 	 * @return
 	 * @author:@haipenge
-	 * haipenge@gmail.com
-	 * 2014年6月24日
+	 * @CreateDate:2014年6月24日
 	 */
 	private static String removeOrders(String sql) {
 		Pattern p = Pattern.compile("order\\s*by[\\w|\\W|\\s|\\S]*", Pattern.CASE_INSENSITIVE);

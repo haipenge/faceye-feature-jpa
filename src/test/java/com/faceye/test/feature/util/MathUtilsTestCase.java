@@ -1,5 +1,6 @@
 package com.faceye.test.feature.util;
 
+import org.eclipse.core.runtime.Assert;
 import org.junit.Test;
 
 import com.faceye.feature.util.MathUtil;
@@ -11,5 +12,6 @@ public class MathUtilsTestCase extends BaseTestCase {
 	public void testRand() throws Exception{
 		int rand  =MathUtil.getRandInt(0, 10);
 		logger.debug(">>FaceYe --> rand is:"+rand);
+		Assert.isTrue(rand>0);
 	}
 }

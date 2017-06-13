@@ -12,10 +12,10 @@ public interface PropertyService {
 	 * @Date:Create Date:2014年1月2日
 	 * @Author @haipenge
 	 */
-	public String get(String key) throws ServiceException;
+	public String get(String key);
 	
 	
-	public String [] getKeys() throws ServiceException;
+	public String [] getKeys();
 	
 	
 }
