@@ -59,7 +59,8 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID ext
 			if (isQueryDslExecutor(metadata.getRepositoryInterface())) {
 				return QueryDslJpaRepository.class;
 			} else {
-				return BaseRepository.class;
+//				return BaseRepository.class;
+				return BaseRepositoryImpl.class;
 			}
 		}
 

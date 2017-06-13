@@ -24,6 +24,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.repository.NoRepositoryBean;
 
 import com.faceye.feature.repository.SearchFilter;
 import com.faceye.feature.repository.jpa.BaseRepository;
@@ -39,12 +40,11 @@ import com.faceye.feature.repository.jpa.SQLBuilderEntity;
  * @param <T>
  * @param <ID>
  */
-//@NoRepositoryBean
+@NoRepositoryBean
 public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements BaseRepository<T, ID> {
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	protected EntityManager entityManager = null;
-	QueryDslPredicateExecutor e=null;
 	
 	// 默认数据库类型
 	protected String DEFAULT_DATA_BASE_TYPE = "mysql";

@@ -52,13 +52,17 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceXmlLocation" value="classpath:/META-INF/persistence.xml" />
+		<property name="packagesToScan" value="com.faceye.component.*.entity" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="generateDdl" value="true" />
 				<property name="database" value="MYSQL" />
 			</bean>
 		</property>
+		<!-- 
 		<property name="persistenceUnitName" value="feature"></property>
+		-->
 	</bean>
 
 
@@ -80,6 +84,7 @@
     <jpa:repositories base-package="com.faceye"
 		transaction-manager-ref="transactionManager"
 		entity-manager-factory-ref="entityManagerFactory"
+		factory-class="com.faceye.feature.repository.jpa.impl.BaseRepositoryFactoryBean"
 		base-class="com.faceye.feature.repository.jpa.impl.BaseRepositoryImpl">
 	</jpa:repositories>
 	
