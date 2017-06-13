@@ -22,6 +22,10 @@ import com.faceye.feature.repository.jpa.BaseRepository;
 @NoRepositoryBean
 public class BaseRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID extends Serializable> extends
 		JpaRepositoryFactoryBean<R, T, ID> {
+	public BaseRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
+		super(repositoryInterface);
+	}
+
 	protected RepositoryFactorySupport createRepositoryFactory(EntityManager entityManager) {
 		return new BaseRepositoryFactory(entityManager);
 	}

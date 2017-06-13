@@ -19,7 +19,7 @@ import org.springframework.util.Assert;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
 //extends AbstractJUnit4SpringContextTests
-public class BaseRepositoryTestCase extends AbstractJUnit4SpringContextTests {
+public class BaseRepositoryTestCase{
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Test
