@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,6 +39,11 @@ public class BaseControllerTestCase {
 		 //this.mockMvc =
 		// MockMvcBuilders.webAppContextSetup(webApplicationContext).addFilter(new
 		// SessionFilter(), "/*").build();
+		Assert.isTrue(true);
+	}
+	@Test
+	public void env() throws Exception{
+		Assert.isTrue(true);
 	}
 	
 }

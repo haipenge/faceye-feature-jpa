@@ -11,7 +11,7 @@
 	<name>faceye-feature-jpa</name>
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
-		<spring.version>4.3.0.RELEASE</spring.version>
+		<spring.version>4.3.6.RELEASE</spring.version>
 		<spring.data.jpa.version>1.10.2.RELEASE</spring.data.jpa.version>
 		<jedis.version>2.4.2</jedis.version>
 		
@@ -73,12 +73,14 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>${spring.data.jpa.version}</version>
+			<!-- 
 			<exclusions>
 				<exclusion>
 					<groupId>junit</groupId>
 					<artifactId>junit-dep</artifactId>
 				</exclusion>
 			</exclusions>
+			 -->
 		</dependency>
 
 
@@ -150,6 +152,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<!-- spring test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
