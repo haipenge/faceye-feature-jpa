@@ -37,13 +37,11 @@ public class EntityManagerFactoryTestCase extends BaseRepositoryTestCase {
 			Statement stmt = conn.createStatement();
 			stmt.executeQuery(sql);
 			ResultSet rs = stmt.getResultSet();
-			if (rs.next()) {
+			while (rs.next()) {
 				String db = rs.getString(1);
 				logger.debug(">>FaceYe db is:" + db);
 				Assert.isTrue(StringUtils.isNotEmpty(db));
 
-			} else {
-				Assert.isTrue(1 > 2);
 			}
 			rs.close();
 			stmt.close();

@@ -1,6 +1,6 @@
 package com.faceye.feature.repository.jpa.impl;
 
-import static org.springframework.data.querydsl.QueryDslUtils.QUERY_DSL_PRESENT;
+import static org.springframework.data.querydsl.QueryDslUtils.*;
 
 import java.io.Serializable;
 
@@ -16,8 +16,6 @@ import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.core.RepositoryMetadata;
 import org.springframework.data.repository.core.support.RepositoryFactorySupport;
-
-import com.faceye.feature.repository.jpa.BaseRepository;
 
 @NoRepositoryBean
 public class BaseRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID extends Serializable> extends
