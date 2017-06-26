@@ -14,17 +14,16 @@
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<spring.data.jpa.version>1.11.4.RELEASE</spring.data.jpa.version>
 		<jedis.version>2.4.2</jedis.version>
-		
-		<!--
-		<hibernate.version>5.1.0.Final</hibernate.version>-->
+
+		<!-- <hibernate.version>5.1.0.Final</hibernate.version> -->
 		<hibernate.version>4.3.11.Final</hibernate.version>
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
-		
+
 		<mysql.version>5.1.42</mysql.version>
 		<servlet-api.version>3.0-alpha-1</servlet-api.version>
 		<jstl.version>1.2</jstl.version>
 		<junit.version>4.12</junit.version>
-		
+
 		<jetty.version>9.0.2.v20130417</jetty.version>
 		<jetty.orbit.version>3.0.0.v201112011016</jetty.orbit.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
@@ -43,7 +42,7 @@
 			<artifactId>faceye-util-manager</artifactId>
 			<version>${faceye-util-manager.version}</version>
 		</dependency>
-		
+
 		<!-- <dependency> <groupId>org.apache.tiles</groupId> <artifactId>tiles-core</artifactId> 
 			<version>${tiles.version}</version> </dependency> <dependency> <groupId>org.apache.tiles</groupId> 
 			<artifactId>tiles-api</artifactId> <version>${tiles.version}</version> </dependency> 
@@ -55,14 +54,14 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>${spring.data.jpa.version}</version>
-			<!-- 
-			<exclusions>
-				<exclusion>
-					<groupId>junit</groupId>
-					<artifactId>junit-dep</artifactId>
-				</exclusion>
-			</exclusions>
-			 -->
+			<!-- <exclusions> <exclusion> <groupId>junit</groupId> <artifactId>junit-dep</artifactId> 
+				</exclusion> </exclusions> -->
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 
 
@@ -124,8 +123,8 @@
 		</dependency>
 
 
-		
-		
+
+
 		<!-- TEST begin -->
 		<!-- junit -->
 		<dependency>
@@ -134,7 +133,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- spring test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -142,7 +141,7 @@
 			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Wed end -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -163,7 +162,7 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>${commons-dbcp.version}</version>
 		</dependency>
-		
+
 	</dependencies>
 	<build>
 		<finalName>faceye-feature-jpa</finalName>
@@ -238,7 +237,7 @@
 				</goals> </execution> </executions> <configuration> <excludes> <exclude>**/**/*.xml</exclude> 
 				<exclude>**/**/*.properties</exclude> <exclude>**/**/*.txt</exclude> <exclude>**/**/*.dic</exclude> 
 				</excludes> </configuration> </plugin> -->
-			
+
 		</plugins>
 	</build>
 	<profiles>
@@ -389,9 +388,9 @@
 		</profile>
 	</profiles>
 	<repositories>
-		
+
 	</repositories>
 	<pluginRepositories>
-				
+
 	</pluginRepositories>
 </project>
