@@ -22,7 +22,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
  * @param <ID>
  * @param <D>
  */
-public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepository<T, ID>> implements BaseService<T, ID> {
+public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepository<T, ID>>
+		implements BaseService<T, ID> {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	protected D dao = null;
 
@@ -31,22 +32,22 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 	}
 
 	@Override
-	public void save(T entity)  {
-		dao.save(entity);
+	 public T save(T entity)  {
+		return dao.save(entity);
 	}
 
 	@Override
-	public void save(Iterable<T> entities) {
-		dao.save(entities);
+	public List<T> save(Iterable<T> entities) {
+		return dao.save(entities);
 	}
 
 	@Override
-	public void saveAndFlush(T entity) {
-		dao.saveAndFlush(entity);
+	public T saveAndFlush(T entity) {
+		return dao.saveAndFlush(entity);
 	}
 
 	@Override
-	public T get(ID id)  {
+	public T get(ID id) {
 		return dao.findOne(id);
 	}
 
@@ -61,17 +62,17 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 	}
 
 	@Override
-	public void removeAll()  {
+	public void removeAll() {
 		dao.deleteAll();
 	}
 
 	@Override
-	public void removeAllInBatch(){
+	public void removeAllInBatch() {
 		dao.deleteAllInBatch();
 	}
 
 	@Override
-	public void removeInBatch(Iterable<T> entities)  {
+	public void removeInBatch(Iterable<T> entities) {
 		dao.deleteInBatch(entities);
 	}
 
@@ -86,8 +87,7 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 	}
 
 	/**
-	 * page :0,1,2,3
-	 * 分页查询
+	 * page :0,1,2,3 分页查询
 	 */
 	@Override
 	public Page<T> getPage(Map<String, Object> searchParams, int page, int size) {
