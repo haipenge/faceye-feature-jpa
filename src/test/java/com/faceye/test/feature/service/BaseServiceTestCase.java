@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
@@ -16,6 +16,6 @@ public class BaseServiceTestCase extends AbstractTransactionalJUnit4SpringContex
 
 	@Test
 	public void env() throws Exception {
-		Assert.isTrue(true);
+		Assert.assertTrue(true);
 	}
 }

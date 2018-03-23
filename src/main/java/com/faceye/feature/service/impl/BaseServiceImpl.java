@@ -10,7 +10,7 @@ import org.springframework.data.domain.Page;
 
 import com.faceye.feature.repository.jpa.BaseRepository;
 import com.faceye.feature.service.BaseService;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import org.springframework.context.support.ResourceBundleMessageSource;
 
@@ -38,7 +38,7 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 
 	@Override
 	public List<T> save(Iterable<T> entities) {
-		return dao.save(entities);
+		return dao.saveAll(entities);
 	}
 
 	@Override
@@ -48,12 +48,12 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 
 	@Override
 	public T get(ID id) {
-		return dao.findOne(id);
+		return dao.getOne(id);
 	}
 
 	@Override
 	public void remove(ID id) {
-		dao.delete(id);
+		dao.deleteById(id);
 	}
 
 	@Override
@@ -83,7 +83,7 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 
 	@Override
 	public List<T> getAll(Iterable<ID> ids) {
-		return dao.findAll(ids);
+		return dao.findAllById(ids);
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 	 */
 	@Override
 	public Page<T> getPage(Map<String, Object> searchParams, int page, int size) {
-		return dao.getPage(searchParams, page, size);
+		return getPage(searchParams, page, size);
 	}
 
 }

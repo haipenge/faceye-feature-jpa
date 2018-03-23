@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 
 /**
@@ -24,7 +24,7 @@ abstract public class BaseRepositoryTestCase extends AbstractTransactionalJUnit4
 
 	@Test
 	public void testEnv() throws Exception {
-		Assert.isTrue(true);
+		Assert.assertTrue(true);
 	}
 
 }

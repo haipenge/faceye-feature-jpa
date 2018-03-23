@@ -3,7 +3,7 @@ package com.faceye.feature.service;
 import java.util.Collection;
 import java.util.Queue;
 
-import com.faceye.feature.util.ServiceException;
+ 
 
 /**
  * 队列服务接口

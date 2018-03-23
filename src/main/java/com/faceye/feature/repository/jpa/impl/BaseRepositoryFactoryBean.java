@@ -1,6 +1,6 @@
 package com.faceye.feature.repository.jpa.impl;
 
-import static org.springframework.data.querydsl.QueryDslUtils.*;
+import static org.springframework.data.querydsl.QuerydslUtils.*;
 
 import java.io.Serializable;
 
@@ -10,9 +10,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
-import org.springframework.data.jpa.repository.support.QueryDslJpaRepository;
+import org.springframework.data.jpa.repository.support.QuerydslJpaRepository;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.core.RepositoryMetadata;
 import org.springframework.data.repository.core.support.RepositoryFactorySupport;
@@ -46,7 +46,7 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID ext
 			SimpleJpaRepository<?, ?> repo = null;
 			Boolean isQueryDslExecutor = isQueryDslExecutor(repositoryInterface);
 			if (isQueryDslExecutor) {
-				repo = new QueryDslJpaRepository(entityInformation, entityManager);
+				repo = new QuerydslJpaRepository(entityInformation, entityManager);
 			} else {
 				repo = new BaseRepositoryImpl(entityInformation, entityManager);
 			}
@@ -55,7 +55,7 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID ext
 
 		protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
 			if (isQueryDslExecutor(metadata.getRepositoryInterface())) {
-				return QueryDslJpaRepository.class;
+				return QuerydslJpaRepository.class;
 			} else {
 //				return BaseRepository.class;
 				return BaseRepositoryImpl.class;
@@ -63,7 +63,7 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID ext
 		}
 
 		private boolean isQueryDslExecutor(Class<?> repositoryInterface) {
-			return QUERY_DSL_PRESENT && QueryDslPredicateExecutor.class.isAssignableFrom(repositoryInterface);
+			return QUERY_DSL_PRESENT && QuerydslPredicateExecutor.class.isAssignableFrom(repositoryInterface);
 		}
 	}
 }

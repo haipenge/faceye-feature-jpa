@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 public class EntityManagerFactoryTestCase extends BaseRepositoryTestCase {
 	@Autowired
@@ -21,12 +21,12 @@ public class EntityManagerFactoryTestCase extends BaseRepositoryTestCase {
 
 	@Test
 	public void entityManagerFactory() throws DataAccessException {
-		Assert.isTrue(entityManagerFactory != null);
+		Assert.assertTrue(entityManagerFactory != null);
 	}
 
 	@Test
 	public void dataSource() throws Exception {
-		Assert.isTrue(dataSource != null);
+		Assert.assertTrue(dataSource != null);
 	}
 
 	@Test
@@ -40,14 +40,14 @@ public class EntityManagerFactoryTestCase extends BaseRepositoryTestCase {
 			while (rs.next()) {
 				String db = rs.getString(1);
 				logger.debug(">>FaceYe db is:" + db);
-				Assert.isTrue(StringUtils.isNotEmpty(db));
+				Assert.assertTrue(StringUtils.isNotEmpty(db));
 
 			}
 			rs.close();
 			stmt.close();
 			conn.close();
 		} else {
-			Assert.isTrue(1 > 2);
+			Assert.assertTrue(1 > 2);
 		}
 
 	}

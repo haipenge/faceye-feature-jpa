@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 /**
  * 基础测试用例
@@ -28,6 +28,6 @@ public class BaseTestCase {
 	@Test
 	public void testEnv() throws Exception {
 		logger.debug(">>FaceYe : BaseTestCase Test Env now.");
-		Assert.isTrue(true);
+		Assert.assertTrue(true);
 	}
 }

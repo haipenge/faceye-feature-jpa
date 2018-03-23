@@ -7,7 +7,7 @@ import java.util.Map;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.faceye.feature.util.ServiceException;
+ 
 
 public interface BaseService<T, ID extends Serializable> {
 	/**

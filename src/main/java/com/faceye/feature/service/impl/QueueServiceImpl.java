@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.faceye.feature.service.QueueService;
-import com.faceye.feature.util.ServiceException;
+ 
 
 public abstract class QueueServiceImpl<T> implements QueueService<T> {
 

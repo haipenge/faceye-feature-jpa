@@ -11,15 +11,19 @@
 	<name>faceye-feature-jpa</name>
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
-		<spring.version>4.3.9.RELEASE</spring.version>
-		<spring.data.jpa.version>1.11.4.RELEASE</spring.data.jpa.version>
+		<spring.version>5.0.4.RELEASE</spring.version>
+		<spring.data.jpa.version>2.0.5.RELEASE</spring.data.jpa.version>
 		<jedis.version>2.4.2</jedis.version>
 
 		<!-- <hibernate.version>5.1.0.Final</hibernate.version> -->
-		<hibernate.version>5.2.10.Final</hibernate.version>
+		<hibernate.version>5.2.14.Final</hibernate.version>
+		
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+	<!--
+	<hibernate-validator.version>6.0.7.Final</hibernate-validator.version>
+	-->
 
-		<mysql.version>5.1.42</mysql.version>
+		<mysql.version>5.1.45</mysql.version>
 		<servlet-api.version>3.0-alpha-1</servlet-api.version>
 		<jstl.version>1.2</jstl.version>
 		<junit.version>4.12</junit.version>
@@ -30,7 +34,7 @@
 		<!-- Plugin的属性定义 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
 		<faceye-util-manager.version>1.0</faceye-util-manager.version>
 	</properties>
 	<prerequisites>
@@ -50,6 +54,11 @@
 			<version>${tiles.version}</version> </dependency> -->
 		<!-- SPRING basic end -->
 		<!-- spring data jpa -->
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+
+
+
+		
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
@@ -63,6 +72,13 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-tx</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+		
 
 
 
@@ -192,7 +208,7 @@
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 						<descriptor>src/main/webapp/WEB-INF/web.xml</descriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-							<resourcesAsCSV>src/main/webapp</resourcesAsCSV>
+							<resourcesAsCSV>../faceye-feature/src/main/webapp,src/main/webapp</resourcesAsCSV>
 						</baseResource>
 					</webApp>
 				</configuration>
